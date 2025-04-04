@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FitLife Gym</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="logo"><a href="/">FitLife Gym</a></div>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#membership">Membership</a></li>
+            <li><a href="#trainers">Trainers</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><button class="login-btn" onclick="openLoginModal()">Login</button></li>
+        </ul>
+        <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+
+    <section id="home" class="hero">
+        <div class="hero-content animate-fade-in">
+            <h1>Welcome to FitLife Gym</h1>
+            <p>Transform Your Life with Our Premium Fitness Experience</p>
+            <button class="cta-btn pulse" onclick="location.href='#membership'">Join Now</button>
+        </div>
+    </section>
+
+    <section id="membership" class="membership">
+        <h2 class="section-title">Membership Plans</h2>
+        <div class="plans-container">
+            <div class="plan animate-on-scroll">
+                <h3>Basic</h3>
+                <p class="price">Rs800/month</p>
+                <ul>
+                    <li>Access to Gym Equipment</li>
+                    <li>Locker Room Access</li>
+                    <li>Basic Fitness Assessment</li>
+                </ul>
+                <button onclick="openPaymentModal('Basic', 800)">Select Plan</button>
+            </div>
+            <div class="plan featured animate-on-scroll">
+                <h3>Premium</h3>
+                <p class="price">Rs1200/month</p>
+                <ul>
+                    <li>All Basic Features</li>
+                    <li>Group Classes</li>
+                    <li>Personal Trainer (2x/month)</li>
+                    <li>Nutrition Consultation</li>
+                </ul>
+                <button onclick="openPaymentModal('Premium', 1200)">Select Plan</button>
+            </div>
+            <div class="plan animate-on-scroll">
+                <h3>Elite</h3>
+                <p class="price">Rs1500/month</p>
+                <ul>
+                    <li>All Premium Features</li>
+                    <li>Unlimited Personal Training</li>
+                    <li>Spa Access</li>
+                    <li>Priority Booking</li>
+                </ul>
+                <button onclick="openPaymentModal('Elite', 1500)">Select Plan</button>
+            </div>
+        </div>
+    </section>
+
+    <section id="trainers" class="trainers">
+        <h2 class="section-title">Our Expert Trainers</h2>
+        <div class="trainers-container">
+            <div class="trainer animate-on-scroll" onclick="openTrainerModal('John Smith', 'Strength Training Specialist', '5+ years experience', 'Morning: 6AM-10AM<br>Evening: 5PM-9PM', 'Rs. 1000 per session')">
+                <img src="assets/1.webp" alt="John Smith">
+                <h3>John Smith</h3>
+                <p>Strength Training Specialist</p>
+                <span class="trainer-more">Click for details</span>
+            </div>
+            <div class="trainer animate-on-scroll" onclick="openTrainerModal('Akshaya', 'Yoga & Deit Expert', '7+ years experience', 'Morning: 7AM-11AM<br>Evening: 4PM-8PM', 'Rs. 1200 per session')">
+                <img src="assets/images.jpeg" alt="Akshaya">
+                <h3>Akshaya</h3>
+                <p>Yoga & Deit Expert</p>
+                <span class="trainer-more">Click for details</span>
+            </div>
+            <div class="trainer animate-on-scroll" onclick="openTrainerModal('Mihir Goyal', 'Cardio & HIIT Specialist', '6+ years experience', 'Morning: 5AM-9AM<br>Evening: 6PM-10PM', 'Rs. 1100 per session')">
+                <img src="assets/cardiofitnesstrainer.jpg" alt="Mihir Goyal">
+                <h3>Mihir Goyal</h3>
+                <p>Cardio & HIIT Specialist</p>
+                <span class="trainer-more">Click for details</span>
+            </div>
+            <div class="trainer animate-on-scroll" onclick="openTrainerModal('Sachin kushwah', 'Nutrition & Weight Loss Coach', '8+ years experience', 'Morning: 8AM-12PM<br>Evening: 3PM-7PM', 'Rs. 1300 per session')">
+                <img src="assets/sachin.jpg" alt="Sachin kushwahs">
+                <h3>Sachin kushwah</h3>
+                <p>Nutrition & Weight Loss Coach</p>
+                <span class="trainer-more">Click for details</span>
+            </div>
+        </div>
+    </section>
+
+    <section id="gallery" class="gallery">
+        <h2 class="section-title">Our Gallery</h2>
+        <div class="gallery-container">
+            <button class="gallery-nav prev" onclick="scrollGallery(-1)">❮</button>
+            <div class="gallery-scroll">
+                <div class="gallery-images">
+                    <div class="gallery-item">
+                        <img src="assets/looksgym1.jpg" alt="Gym Interior">
+                        <img src="assets/looksgym2.jpg" alt="Gym Interior">
+                        <div class="gallery-caption">Modern Equipment</div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="assets/cardio-machine1.jpg" alt="Cardio">
+                        <img src="assets/cardio-machine2.jpg" alt="Cardio">
+                        <div class="gallery-caption">Cardio Machine</div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="assets/leg-machine1.jpg" alt="Weight Area">
+                        <img src="assets/fitness-1.jpg" alt="Weight Area">
+                        <div class="gallery-caption">Weight Training</div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="assets/reception.jpg" alt="Reception">
+                        <img src="assets/entrygate1.jpg" alt="Reception">
+                        <div class="gallery-caption">reception</div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="assets/sachin.jpg" alt="Personal Training">
+                        <img src="assets/trainer2.jpg" alt="Personal Training">
+                        <div class="gallery-caption">Personal Training</div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="/placeholder.svg?height=300&width=400" alt="GYM Members">
+                        <div class="gallery-caption">GYM Members</div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="/placeholder.svg?height=300&width=400" alt="GYM Members">
+                        <div class="gallery-caption">GYM Members</div>
+                    </div>
+                </div>
+            </div>
+            <button class="gallery-nav next" onclick="scrollGallery(1)">❯</button>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <h2 class="section-title">Contact Us</h2>
+        <div class="contact-container">
+            <div class="contact-info animate-on-scroll">
+                <h3>Get in Touch</h3>
+                <p><i class="fas fa-map-marker-alt"></i> 123 Fitness Street, Gym City, Jabalpur</p>
+                <p><i class="fas fa-phone"></i> +91 98939992878</p>
+                <p><i class="fas fa-envelope"></i> info@fitlifegym.com</p>
+            </div>
+            <form id="contact-form" class="animate-on-scroll" onsubmit="return handleContactSubmit(event)">
+                <input type="text" placeholder="Name" required>
+                <input type="email" placeholder="Email" required>
+                <textarea placeholder="Message" required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-logo">
+                <h3>FitLife Gym</h3>
+                <p>Transform Your Life with Our Premium Fitness Experience</p>
+            </div>
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#membership">Membership</a></li>
+                    <li><a href="#trainers">Trainers</a></li>
+                    <li><a href="#gallery">Gallery</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-hours">
+                <h4>Opening Hours</h4>
+                <p>Monday - Friday: 5:00 AM - 11:00 PM</p>
+                <p>Saturday - Sunday: 6:00 AM - 10:00 PM</p>
+            </div>
+            <div class="footer-social">
+                <h4>Follow Us</h4>
+                <div class="social-icons">
+                    <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 FitLife Gym. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Login Modal -->
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeLoginModal()">&times;</span>
+            <h2>Login</h2>
+            <form id="login-form" onsubmit="return handleLogin(event)">
+                <input type="email" placeholder="Email" required>
+                <input type="password" placeholder="Password" required>
+                <button type="submit">Login</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Payment Modal -->
+    <div id="paymentModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closePaymentModal()">&times;</span>
+            <h2>Payment Details</h2>
+            <form id="payment-form" onsubmit="return handlePayment(event)">
+                <div id="selected-plan-info"></div>
+                <input type="text" placeholder="Card Number" required>
+                <div class="card-details">
+                    <input type="text" placeholder="MM/YY" required>
+                    <input type="text" placeholder="CVV" required>
+                </div>
+                <button type="submit">Pay Now</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Trainer Details Modal -->
+    <div id="trainerModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeTrainerModal()">&times;</span>
+            <div id="trainer-details"></div>
+        </div>
+    </div>
+
+    <!-- User Account Page (after login) -->
+    <div id="userAccountPage" class="user-account-page">
+        <div class="account-header">
+            <h2>My FitLife Account</h2>
+            <button class="logout-btn" onclick="logout()">Logout</button>
+        </div>
+        <div class="account-content">
+            <div class="account-sidebar">
+                <div class="user-profile">
+                    <div class="user-avatar">
+                        <i class="fas fa-user-circle"></i>
+                    </div>
+                    <h3 id="user-name">User Name</h3>
+                    <p id="user-email">user@example.com</p>
+                </div>
+                <ul class="account-nav">
+                    <li class="active" onclick="showAccountTab('dashboard')">Dashboard</li>
+                    <li onclick="showAccountTab('membership')">My Membership</li>
+                    <li onclick="showAccountTab('schedule')">My Schedule</li>
+                    <li onclick="showAccountTab('profile')">Profile Settings</li>
+                </ul>
+            </div>
+            <div class="account-main">
+                <div id="dashboard-tab" class="account-tab active">
+                    <h3>Dashboard</h3>
+                    <div class="dashboard-stats">
+                        <div class="stat-card">
+                            <i class="fas fa-calendar-check"></i>
+                            <h4>Next Session</h4>
+                            <p>Tomorrow, 7:00 AM</p>
+                        </div>
+                        <div class="stat-card">
+                            <i class="fas fa-dumbbell"></i>
+                            <h4>Workouts</h4>
+                            <p>12 This Month</p>
+                        </div>
+                        <div class="stat-card">
+                            <i class="fas fa-fire-alt"></i>
+                            <h4>Calories</h4>
+                            <p>4,500 Burned</p>
+                        </div>
+                    </div>
+                    <div class="recent-activity">
+                        <h4>Recent Activity</h4>
+                        <ul>
+                            <li>
+                                <span class="activity-date">Mar 30</span>
+                                <span class="activity-desc">Completed HIIT workout with Mike</span>
+                            </li>
+                            <li>
+                                <span class="activity-date">Mar 28</span>
+                                <span class="activity-desc">Attended Yoga class with Sarah</span>
+                            </li>
+                            <li>
+                                <span class="activity-date">Mar 25</span>
+                                <span class="activity-desc">Strength training session</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div id="membership-tab" class="account-tab">
+                    <h3>My Membership</h3>
+                    <div class="membership-details">
+                        <div class="current-plan">
+                            <h4>Current Plan: <span id="current-plan-name">Premium</span></h4>
+                            <p>Status: <span class="status-active">Active</span></p>
+                            <p>Next billing: April 15, 2024</p>
+                            <p>Monthly fee: Rs. <span id="current-plan-fee">1200</span></p>
+                        </div>
+                        <button class="upgrade-btn">Upgrade Plan</button>
+                    </div>
+                    <div class="membership-history">
+                        <h4>Payment History</h4>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Date</th>
+                                    <th>Amount</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Mar 15, 2024</td>
+                                    <td>Rs. 1200</td>
+                                    <td>Paid</td>
+                                </tr>
+                                <tr>
+                                    <td>Feb 15, 2024</td>
+                                    <td>Rs. 1200</td>
+                                    <td>Paid</td>
+                                </tr>
+                                <tr>
+                                    <td>Jan 15, 2024</td>
+                                    <td>Rs. 1200</td>
+                                    <td>Paid</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div id="schedule-tab" class="account-tab">
+                    <h3>My Schedule</h3>
+                    <div class="schedule-calendar">
+                        <div class="calendar-header">
+                            <h4>April 2024</h4>
+                            <div class="calendar-nav">
+                                <button>&lt;</button>
+                                <button>&gt;</button>
+                            </div>
+                        </div>
+                        <div class="calendar-grid">
+                            <!-- Calendar would be generated by JavaScript -->
+                            <div class="calendar-placeholder">
+                                <p>Calendar view would be displayed here</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="upcoming-sessions">
+                        <h4>Upcoming Sessions</h4>
+                        <div class="session-card">
+                            <div class="session-date">
+                                <span class="day">01</span>
+                                <span class="month">Apr</span>
+                            </div>
+                            <div class="session-details">
+                                <h5>Strength Training with John</h5>
+                                <p><i class="far fa-clock"></i> 7:00 AM - 8:00 AM</p>
+                            </div>
+                            <button class="cancel-session">Cancel</button>
+                        </div>
+                        <div class="session-card">
+                            <div class="session-date">
+                                <span class="day">03</span>
+                                <span class="month">Apr</span>
+                            </div>
+                            <div class="session-details">
+                                <h5>Yoga Class with Sarah</h5>
+                                <p><i class="far fa-clock"></i> 6:00 PM - 7:00 PM</p>
+                            </div>
+                            <button class="cancel-session">Cancel</button>
+                        </div>
+                    </div>
+                </div>
+                <div id="profile-tab" class="account-tab">
+                    <h3>Profile Settings</h3>
+                    <form class="profile-form">
+                        <div class="form-group">
+                            <label for="login">Full Name</label>
+                            <input id="login" type="text" value="User Name">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input id="email" type="email" value="user@example.com">
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone</label>
+                            <input id="phone" type="tel" value="+91 9876543210">
+                        </div>
+                        <div class="form-group">
+                            <label for="address">Address</label>
+                            <textarea id="address">123 Main St, Jabalpur</textarea>
+                        </div>
+                        <div class="form-group">
+                            <label>Change Password</label>
+                            <input type="password" placeholder="Current Password">
+                            <input type="password" placeholder="New Password">
+                            <input type="password" placeholder="Confirm New Password">
+                        </div>
+                        <button type="submit">Save Changes</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+
+</html>
